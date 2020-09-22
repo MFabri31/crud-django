@@ -1,0 +1,32 @@
+{% extends 'index.html'%}
+
+{% block title %} Registro {% endblock title %}
+
+z
+{%block content%}  
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-8">        
+                <form method="POST">
+                    {% comment %} renderiza la key del dict context  {% endcomment %}
+                    {% csrf_token %}
+                    {{ form.as_p}}  
+                <button type="submit" class"btn btn-secondary">Crear o Editar</button>
+                <a href="{% url 'index' %}" class="btn btn-secondary">
+                <i class="fas fa-undo-alt"></i>
+                Volver</a>
+                </form>
+            </div>
+        </div>
+    </div>
+{% endblock content%}
+
+
+
+{% comment %} 
+
+con doble {{}} se renderiza valores.
+.as_p genera un salto de línea.
+
+{% endcomment %}
+
